@@ -46,7 +46,7 @@ for (let i = 0; i < quiz.length; i++) {
     if (!["A", "B", "C", "D"].includes(answer)) {
       console.log("Invalid input. Please enter A, B, C, or D only.");
       i--;
-      // continue;
+      continue;
     }
 
     let nextQuestion = i + 1;
@@ -57,7 +57,8 @@ for (let i = 0; i < quiz.length; i++) {
       console.log("Question " + nextQuestion + ": Wrong. Correct answer is " + quiz[i].answer);
     }
   } catch(error) {
-
+      console.error("An unexpected error occurred:", error.message);
+      break; 
   }
   
 }
